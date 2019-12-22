@@ -30,6 +30,10 @@ app.get('',(request, response) =>{
     })
 });
 
+app.get('/wifi', (request, response)=>{
+    response.render('wifi')
+});
+
 
 app.get('*',(request, response)=>{
     response.render('404',{
