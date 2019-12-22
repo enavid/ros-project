@@ -31,7 +31,10 @@ app.get('',(request, response) =>{
 });
 
 app.get('/wifi', (request, response)=>{
-    response.render('wifi')
+    response.render('wifi',{
+        title:'wifi',
+        name: 'Navid Sadeghi'
+    })
 });
 
 
