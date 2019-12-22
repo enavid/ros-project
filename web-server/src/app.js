@@ -31,6 +31,13 @@ app.get('',(request, response) =>{
 });
 
 
+app.get('*',(request, response)=>{
+    response.render('404',{
+        title: '404',
+        name: 'Navid Sadeghi',
+        errorMessage: 'Page not found',
+    })
+})
 app.listen(PORT,()=>{
     console.log('server is up on port ' + PORT);
 })
