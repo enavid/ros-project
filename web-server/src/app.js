@@ -3,6 +3,7 @@ const PORT = 3000;
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
+const ip = require('./utiles/ip');
 
 
 const app = express();
@@ -23,28 +24,29 @@ app.set('view engine', 'hbs');
 app.set('views', viewPath);
 
 
-app.get('',(request, response) =>{
-    response.render('index',{
-        title:'ROS',
-        name:'Navid Sadeghi'
+app.get('', (request, response) => {
+    response.render('index', {
+        title: 'ROS',
+        name: 'Navid Sadeghi'
     })
 });
 
-app.get('/wifi', (request, response)=>{
-    response.render('wifi',{
-        title:'wifi',
+app.get('/wifi', (request, response) => {
+    response.render('wifi', {
+        title: 'wifi',
+        ip: ip,
         name: 'Navid Sadeghi'
     })
 });
 
 
-app.get('*',(request, response)=>{
-    response.render('404',{
+app.get('*', (request, response) => {
+    response.render('404', {
         title: '404',
         name: 'Navid Sadeghi',
         errorMessage: 'Page not found',
     })
 })
-app.listen(PORT,()=>{
+app.listen(PORT, () => {
     console.log('server is up on port ' + PORT);
 })
