@@ -1,7 +1,7 @@
 const os = require('os');
 const ifaces = os.networkInterfaces();
 
-var result;
+var result = {}; 
 
 Object.keys(ifaces).forEach(function (ifname) {
     var alias = 0;
@@ -14,10 +14,14 @@ Object.keys(ifaces).forEach(function (ifname) {
 
         if (alias >= 1) {
             // this single interface has multiple ipv4 addresses
-            result = ifname + ':' + alias + " " + iface.address;
+            result.ifname = ifname;
+            result.address = iface.address;
+            result.alias = alias;
         } else {
             // this interface has only one ipv4 adress
-            result = ifname + " " + iface.address;
+            result.ifname = ifname;
+            result.address = iface.address;
+            result.alias = alias;
         }
         ++alias;
     });

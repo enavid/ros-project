@@ -5,7 +5,7 @@ const express = require('express');
 const hbs = require('hbs');
 const ip = require('./utiles/ip');
 
-
+console.log(ip)
 const app = express();
 
 // Define paths for Express config
