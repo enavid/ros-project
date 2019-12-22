@@ -13,7 +13,26 @@
 
 <body>
     {{>header}}
-    <p>{{ip}}</p>
+
+    <div class="hotspot">
+        <p>Turn on Hotspot</p>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+
+    <table>
+        <tr>
+            <th>Interface</th>
+            <th>Ip address</th>
+        </tr>
+        <tr>
+            <td>{{interface}}</td>
+            <td>{{ip}}</td>
+        </tr>
+    </table>
 
     {{>footer}}
 

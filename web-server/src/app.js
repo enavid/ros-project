@@ -33,8 +33,9 @@ app.get('', (request, response) => {
 
 app.get('/wifi', (request, response) => {
     response.render('wifi', {
-        title: 'wifi',
-        ip: ip,
+        title: 'WIFI',
+        interface: ip.ifname,
+        ip:ip.address,
         name: 'Navid Sadeghi'
     })
 });
