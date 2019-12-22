@@ -40,7 +40,13 @@ app.get('/wifi', (request, response) => {
     })
 });
 
-
+app.get('/terminal', (request, response) =>{
+    response.render('terminal',{
+        title:'Terminal',
+        ip:ip.address,
+        name: 'Naivd Sadeghi',
+    });
+})
 app.get('*', (request, response) => {
     response.render('404', {
         title: '404',
