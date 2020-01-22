@@ -1,4 +1,4 @@
-const PORT = 3000;
+const PORT = 3001;
 
 const path = require('path');
 const express = require('express');
@@ -43,6 +43,13 @@ app.get('/wifi', (request, response) => {
 app.get('/terminal', (request, response) =>{
     response.render('terminal',{
         title:'Terminal',
+        ip:ip.address,
+        name: 'Naivd Sadeghi',
+    });
+})
+app.get('/jupyter', (request, response) =>{
+    response.render('jupyter',{
+        title:'Jupyter',
         ip:ip.address,
         name: 'Naivd Sadeghi',
     });
