@@ -66,6 +66,14 @@ img{
   border-radius: 5px;
 }
 
+/* Iframe style */
+iframe{
+  position: fixed;
+  width:		100vw;
+  height:		100vh;
+}
+
+
 
 /* 
 .main-content {
